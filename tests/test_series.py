@@ -1,4 +1,4 @@
-from math_series.series import fibonacci, lucas
+from math_series.series import fibonacci, lucas, sum_series
 import pytest
 
 # test fibonacci function with valid input
@@ -52,3 +52,17 @@ def test_lucas_with_invalid_input_float():
 
 def test_lucas_with_invalid_input_string():
     assert lucas("world") == None
+
+# test sum_series function with valid input
+def test_sum_series_with_valid_input_and_default_arguments():
+    assert sum_series(5) == 5
+
+def test_sum_series_with_valid_input_5_2_1():
+    assert sum_series(5, 2, 1) == 11
+
+def test_sum_series_with_valid_input_5_2_2():
+    assert sum_series(5, 2, 2) == 16
+
+# test sum_series function with invalid input
+def test_sum_series_with_invalid_input_hello_1_5():
+    assert sum_series("hello", 1, 5) == None
